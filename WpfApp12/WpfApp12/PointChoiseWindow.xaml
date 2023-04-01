@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp12.PointChoiseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp12"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+     
+        Title="PointChoiseWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="На каком предприятии вы работаете сегодня?" FontSize="30" Margin="0,40,0,0" FontFamily="Roboto Black" Foreground="#FF145069"></TextBlock>
+            <ListBox x:Name="pointLst" MaxHeight="250" BorderThickness="3">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding name, StringFormat='Название: {0}'}" FontFamily="Roboto Black" Foreground="#FF145069" FontSize="22"></TextBlock>
+                            <TextBlock Text="{Binding address, StringFormat='Адрес: {0}'}"  FontFamily="Roboto Black" Foreground="#FF145069" FontSize="22" ></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Выбрать" Style="{StaticResource buttonstyle1}" Foreground="White" Margin="0,10,0,0" Height="40" Width="150" FontFamily="Roboto Black" FontSize="22" Click="Button_Click_1"></Button>
+                <Button Content="Я смотрю статистику" Style="{StaticResource buttonstyle1}" x:Name="statBtn" Foreground="White" Margin="5,10,0,0" Height="40" Width="250" FontFamily="Roboto Black" FontSize="22"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

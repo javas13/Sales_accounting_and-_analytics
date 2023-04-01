@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a9e6ee2bbd84318adbeca439e7f16dc" Name="Diagram1">
+        <EntityTypeShape EntityType="WorkshopModel.Order" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Order_product" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Point" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Product" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Product_point" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Role" Width="1.5" PointX="1.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.Type" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="WorkshopModel.User" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="WorkshopModel.FK_Order_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_Order_product_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_order_user" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_Order_product_product" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_Product_point_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_Product_point_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_Product_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="WorkshopModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

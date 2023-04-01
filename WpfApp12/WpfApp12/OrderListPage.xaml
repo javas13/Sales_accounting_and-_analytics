@@ -1,0 +1,106 @@
+﻿<Page x:Class="WpfApp12.OrderListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materials="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:WpfApp12"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="OrderListPage">
+
+    <Grid Background="GhostWhite">
+        <Grid Background="GhostWhite">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Gray" BorderThickness="3" Margin="5,3,5,0">
+                <StackPanel >
+                    
+                   
+                    <TextBlock Text="Категория товара" Margin="5,5,0,0" FontSize="16" FontFamily="/WpfApp3;component/Fonts/#Roboto Black"></TextBlock>
+                    <ComboBox SelectedIndex="5"  x:Name="popit" Height="30" Margin="0,5,0,0"  Width="175" FontSize="16">
+                        <TextBlock Text="Полный день"></TextBlock>
+                        <TextBlock Text="Сменный график"></TextBlock>
+                        <TextBlock Text="Гибкий график"></TextBlock>
+                        <TextBlock Text="Удаленная работа"></TextBlock>
+                        <TextBlock Text="Вахтовый метод"></TextBlock>
+                        <TextBlock Text="Не имеет значения" ></TextBlock>
+                    </ComboBox>
+                    <TextBlock Text="Магазин" Margin="5,5,0,0" FontSize="16" FontFamily="/WpfApp3;component/Fonts/#Roboto Black"></TextBlock>
+                    <ComboBox SelectedIndex="5"  x:Name="carcmb" Height="30" Margin="0,5,0,0"  Width="175" FontSize="16">
+                        <TextBlock Text="Полная занятость"></TextBlock>
+                        <TextBlock Text="Частичная занятость"></TextBlock>
+                        <TextBlock Text="Проектная работа или разовое задание"></TextBlock>
+                        <TextBlock Text="Волонтерство"></TextBlock>
+                        <TextBlock Text="Стажировка"></TextBlock>
+                        <TextBlock Text="Не имеет значения" ></TextBlock>
+                    </ComboBox>
+
+                    <TextBlock Text="Дата заказа" Margin="5,5,0,0" FontSize="16" FontFamily="/WpfApp3;component/Fonts/#Roboto Black"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Height="30" Width="175" HorizontalAlignment="Left" Margin="5,5,0,0">
+
+
+                            <TextBox IsReadOnly="True" x:Name="datetimetxt" Style="{StaticResource textbxstyle}" Height="30" Width="175" Text="{Binding ElementName=datepic, Path=SelectedDate, StringFormat='{}{0:dd.MM.yyyy}'}" BorderThickness="0"   VerticalContentAlignment="Center" FontSize="26"  FontFamily="Roboto Black"  Foreground="#FF145069" />
+                            <DatePicker Name="datepic" DisplayDateStart="04.27.2022"  FontSize="26" Background="White" BorderThickness="0" DisplayDateEnd="12.31.2024" Margin="145,2,2,2"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        
+                       
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBox x:Name="poisktxt" Width="500" Text="Найти" Foreground="Gray" FontFamily="Roboto Black" HorizontalAlignment="Center"  Margin="30,0,0,0" FontSize="24" VerticalAlignment="Center" Height="50" Style="{StaticResource textbxstyle}" TextChanged="poisk_TextChanged" GotFocus="poisktxt_GotFocus" LostFocus="poisktxt_LostFocus" ></TextBox>
+
+                    <Button Background="DarkSeaGreen"  Style="{StaticResource buttonstyle1}" Height="50" Width="75" Margin="10,0,0,0" BorderBrush="DarkSeaGreen">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="0"/>
+
+
+                            </Style>
+
+
+                        </Button.Resources>
+                        <materials:PackIcon Kind="refresh" Foreground="White" Width="40" Height="40" ></materials:PackIcon>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Список заказов" Margin="30,0,0,0"  Foreground="#FF145069" FontWeight="Normal" FontSize="36" FontFamily="Roboto Black"></TextBlock>
+            </StackPanel>
+
+
+            <ListBox ScrollViewer.CanContentScroll="False" Style="{StaticResource list1}" ScrollViewer.HorizontalScrollBarVisibility ="Disabled" Margin="25,0,0,0"  BorderThickness="0" x:Name="orderlistbox"  Grid.Row="1"    HorizontalAlignment="Left" Background="GhostWhite" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+
+
+
+
+            </ListBox >
+
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="30,5,0,0">
+
+                <TextBlock  Text="Количество заказов: " Foreground="#FF145069" FontWeight="Normal" FontFamily="Roboto Black" FontSize="24" ></TextBlock>
+                <TextBlock x:Name="kolvo"  Text="" FontSize="24" Foreground="#FF145069"  FontFamily="Roboto Black"></TextBlock>
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>

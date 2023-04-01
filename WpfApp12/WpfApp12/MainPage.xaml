@@ -1,0 +1,104 @@
+﻿<Page x:Class="WpfApp12.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp12"
+      xmlns:materials="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="MainPage">
+   
+
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel  Orientation="Horizontal" Background="Aqua"  >
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.5"/>
+            </StackPanel.Effect>
+            <Button  Name="loginbutton"   Width="70" Height="70" Margin="5,0,0,0"  FontFamily="/WpfApp3;component/Fonts/#Roboto Medium" FontSize="24" Foreground="White" Style="{StaticResource buttonstyle2}" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="50"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+                <StackPanel>
+                    <materials:PackIcon Kind="FaceMale" Foreground="#FF145069" HorizontalAlignment="Center" Width="70" Height="70" ></materials:PackIcon>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource buttonstyle1}" Content="Новый заказ +"  Foreground="White" FontSize="25"  Height="65" Width="200" Margin="5,0,0,0" FontFamily="Roboto Black" FontWeight="Normal" Click="Button_Click_2" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+              
+            </Button>
+            <Button Style="{StaticResource buttonstyle1}" Content="Список заказов"  Foreground="White" FontSize="25"  Height="65" Width="200" Margin="5,0,0,0" FontFamily="Roboto Black" FontWeight="Normal" Click="Button_Click_1" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+
+            </Button>
+            <Button Style="{StaticResource buttonstyle1}" x:Name="StatButton" Visibility="Collapsed" Content="Статистика"  Foreground="White" FontSize="25"  Height="65" Width="160" Margin="5,0,0,0" FontFamily="Roboto Black" FontWeight="Normal" Click="StatButton_Click" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+
+            </Button>
+            <Button Style="{StaticResource buttonstyle1}" x:Name="RedactButton" Content="Управление" Visibility="Visible"  Foreground="White" FontSize="25"  Height="65" Width="160" Margin="5,0,0,0" FontFamily="Roboto Black" FontWeight="Normal" Click="RedactButton_Click"  >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+
+            </Button>
+           
+        </StackPanel>
+        <StackPanel  Grid.Row="0">
+            <Button Style="{StaticResource buttonstyle1}"   Foreground="White" HorizontalAlignment="Right" FontSize="25"  Height="65" Width="80" Margin="0,7,8,0" Click="Button_Click" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+                <materials:PackIcon Kind="ExitToApp" Foreground="White"  Width="65" Height="65" ></materials:PackIcon>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="secondFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="0,5,0,0">
+            
+        </Frame>
+    </Grid>
+</Page>

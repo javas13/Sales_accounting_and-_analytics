@@ -1,0 +1,51 @@
+﻿<Page x:Class="WpfApp12.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materials="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:WpfApp12"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="LoginPage"
+      >
+
+    <Grid  >
+        <Grid.Background>
+
+            <ImageBrush ImageSource="/WpfApp12;component/images/pattern.png" Viewport="0,0,500,500"  ViewportUnits="Absolute" TileMode="FlipY"      Stretch="Uniform" AlignmentY="Top" ></ImageBrush>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-100,0,0" >
+            <materials:PackIcon Kind="Key" Foreground="#FF145069" HorizontalAlignment="Center" Width="150" Height="150" Margin="0,0,0,40"></materials:PackIcon>
+            <TextBlock Text="Вход в аккаунт" Foreground="#FF145069" FontFamily="/WpfApp12;component/Fonts/#Roboto Black" Margin="0,-60,0,0"  FontSize="50"></TextBlock>
+            <TextBox Height="50" Text="Логин" Foreground="Gray"   x:Name="Logintxtbox" Width="300" FontSize="24" Style="{StaticResource textbxstyle}" Margin="0,20,0,20" GotFocus="Logintxtbox_GotFocus" LostFocus="Logintxtbox_LostFocus">
+                <TextBox.Effect>
+                    <DropShadowEffect Opacity="0.5" RenderingBias="Quality"/>
+                </TextBox.Effect>
+            </TextBox>
+            <Grid Width="300" GotFocus="Grid_GotFocus" LostFocus="Grid_LostFocus">
+               
+            
+            <PasswordBox Height="50"  x:Name="passwordboxx" Width="300" Style="{StaticResource passbxstyle}" FontSize="24">
+                    <PasswordBox.Effect>
+                        <DropShadowEffect Opacity="0.5" RenderingBias="Quality"/>
+                    </PasswordBox.Effect>
+                </PasswordBox>
+                <TextBox x:Name="textboxpass" Foreground="Gray" FontSize="24" Text="Пароль" Margin="0,12,30,12" Style="{StaticResource textbxstyle1}" ></TextBox>
+            </Grid>
+            <Button  Name="loginbutton122"   Width="264" Height="44" Content="Войти" FontFamily="/WpfApp12;component/Fonts/#Roboto Medium" FontSize="24" Foreground="White" Style="{StaticResource buttonstyle1}" Margin="0,20,0,0" Click="loginbutton122_Click" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+
+
+                    </Style>
+
+
+                </Button.Resources>
+
+            </Button>
+            
+        </StackPanel>
+    </Grid>
+</Page>
